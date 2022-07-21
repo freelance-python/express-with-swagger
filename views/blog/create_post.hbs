@@ -1,0 +1,38 @@
+<h1>To Upload Image on mongoDB</h1>
+<hr>
+<div>
+    {{#if error}}
+        <div style="color: red;">{{error}}</div>
+    {{/if}}
+    <form method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="category">Category</label>
+            <select name="category">
+                {{#each categories}}
+                <option value="{{id}}">{{title}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div>
+            <label for="title">Title</label>
+            <input name="title" value="" placeholder="Title" required>
+        </div>
+        <div>
+            <label for="desc">Description</label>
+            <textarea name="description" value="" rows="2" placeholder="Description" required></textarea>
+        </div>
+        <div>
+            <label for="image">Upload Image</label>
+            <input type="file" name="image" value="" required>
+        </div>
+        <div>
+            <label for="status">Category</label>
+            <select name="status">
+                <option value="Active">Active</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>

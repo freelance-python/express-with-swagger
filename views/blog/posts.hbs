@@ -1,0 +1,19 @@
+<h1>Blog Posts</h1>
+<p>Welcome to test app blog page</p>
+<div class="row">
+    <div class="mb-5"><a class="btn btn-primary" href="create-post">Create Post</a></div>
+    <div class="row">
+        {{#each posts}}
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{image}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}1</h5>
+                        <p class="card-text">{{description}}</p>
+                        <a href="{{slug}}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

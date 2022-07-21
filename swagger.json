@@ -1,0 +1,163 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My User Project CRUD",
+        "description": "My User Project Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "contact": {
+            "name": "Test App",
+            "url": "http://127.0.0.1:3000",
+            "email": "info@email.com"
+        }
+    },
+    "host": "127.0.0.1:3000",
+    "basePath": "/api/",
+    "tags": [
+        {
+            "name": "Category",
+            "description": "API for categories in the system"
+        },
+        {
+            "name": "Posts",
+            "description": "API for posts in the system"
+        }
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    
+    "paths": {
+        "/category": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Get list of all categories in system",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "create new category",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/category/{id}": {
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true,
+                        "description": "User with new values of properties"
+                        
+                    }
+                ],
+                "summary": "Get detail of an category",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Update category by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true,
+                        "description": "User with new values of properties"
+                    },
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Category"
+                ],
+                "summary": "Update category by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "string",
+                        "required": true,
+                        "description": "User with new values of properties"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Category": {
+            "required": [
+                "title",
+                "status"
+            ],
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
